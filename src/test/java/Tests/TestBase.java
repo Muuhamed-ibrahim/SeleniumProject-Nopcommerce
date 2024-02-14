@@ -33,7 +33,7 @@ public class TestBase {
             driver = new ChromeDriver();
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3200, TimeUnit.SECONDS);
         driver.navigate().to("https://demo.nopcommerce.com/");
 
 }

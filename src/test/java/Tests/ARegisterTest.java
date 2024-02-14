@@ -11,7 +11,8 @@ public class ARegisterTest extends TestBase{
     @Test
 public void successfulRegister (){
         homePage = new HomePage(driver);
-        registerPage = homePage.clickOnRegisterBtn();
+        homePage.clickOnRegisterBtn();
+        registerPage = new RegisterPage(driver);
         registerPage.RegisterCompleted ("Mohamed","ibrahem"
                 ,"test41@gmail.com", "iti",
                 "123456789","123456789");

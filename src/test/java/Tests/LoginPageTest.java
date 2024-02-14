@@ -14,7 +14,8 @@ public class LoginPageTest extends TestBase{
     @Test
     public void TestLogin(){
            homePage = new HomePage(driver);
-           loginPage = homePage.clickOnLoginBtn();
+           homePage.clickOnLoginBtn();
+           loginPage = new LoginPage(driver);
            loginPage.enterLogin("test39@gmail.com","123456789");
     }
 

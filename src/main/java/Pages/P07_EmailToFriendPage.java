@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class EmailToFriendPage extends PageBase{
-    public EmailToFriendPage(WebDriver driver) {
+public class P07_EmailToFriendPage extends PageBase{
+    public P07_EmailToFriendPage(WebDriver driver) {
         super(driver);
     }
     WebElement FriendEmail = driver.findElement(By.id("FriendEmail"));

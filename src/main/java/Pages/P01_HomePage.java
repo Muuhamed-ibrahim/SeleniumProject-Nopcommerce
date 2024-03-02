@@ -1,13 +1,12 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage extends PageBase {
+public class P01_HomePage extends PageBase {
 
-    public HomePage(WebDriver driver) {
+    public P01_HomePage(WebDriver driver) {
         super(driver);
     }
     WebElement MyAccountBtn = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));

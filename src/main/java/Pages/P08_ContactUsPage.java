@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ContactUsPage extends PageBase{
-    public ContactUsPage(WebDriver driver){
+public class P08_ContactUsPage extends PageBase{
+    public P08_ContactUsPage(WebDriver driver){
         super(driver);
     }
     WebElement YourNameElement = driver.findElement(By.id("FullName"));

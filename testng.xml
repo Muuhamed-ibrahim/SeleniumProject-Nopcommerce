@@ -3,6 +3,6 @@
 <suite name="nopCommerce regression Suite">
     <parameter name="browser" value="chrome"></parameter>
     <test verbose="2" preserve-order="true" name="F:/4-intellij/labs/NopCommerce">
-        <classes><class name="Tests.ARegisterTest">
+        <classes><class name="Tests.TC01_RegisterTest">
             <methods><include name="successfulRegister"/></methods>
         </class></classes></test></suite>

@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegisterPage extends PageBase {
-    public RegisterPage(WebDriver driver) {
+public class P02_RegisterPage extends PageBase {
+    public P02_RegisterPage(WebDriver driver) {
         super(driver);
     }
 
@@ -18,7 +18,10 @@ public class RegisterPage extends PageBase {
     WebElement confirmPasswordElement = driver.findElement(By.id("ConfirmPassword"));
     WebElement registerButtonElement =  driver.findElement(By.id("register-button"));
 
-    //public WebElement registerDone = driver.findElement(By.cssSelector(".result"));
+    //    public WebElement registerDoneTextElement  = driver.findElement(By.className("result"));
+    //    public String getRegisterDoneText() {
+    //        return registerDoneTextElement.getText();
+    //    }
     //WebElement continueBtn = driver.findElement(By.cssSelector(".button-1.register-continue-button"));
 
     public void RegisterCompleted (String fName, String lName,String Email,String CompanyName

@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends PageBase{
+public class P03_LoginPage extends PageBase{
 
-    public LoginPage(WebDriver driver) {
+    public P03_LoginPage(WebDriver driver) {
         super(driver);
     }
     WebElement emailElement = driver.findElement(By.id("Email"));
@@ -20,8 +20,8 @@ public class LoginPage extends PageBase{
         clicking(loginBtn);
 
     }
-    public MyAccountPage clickOnMyAccountBtn(){
+    public P04_MyAccountPage clickOnMyAccountBtn(){
         clicking(MyAccountBtn);
-        return new MyAccountPage(driver);
+        return new P04_MyAccountPage(driver);
     }
 }

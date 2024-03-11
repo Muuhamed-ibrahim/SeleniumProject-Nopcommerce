@@ -9,27 +9,22 @@ public class P04_MyAccountPage extends PageBase{
         super(driver);
     }
 
-    WebElement changePasswordLink = driver.findElement(By.linkText("Change password"));
-
-    WebElement oldPasswordTxt = driver.findElement(By.id("OldPassword"));
-
-    WebElement newPasswordTxt = driver.findElement(By.id("NewPassword"));
-
-    WebElement confirmPasswordTxt = driver.findElement(By.id("ConfirmNewPassword"));
-
-    WebElement ChangePasswordBtn = driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div[2]/div/div[2]/form/div[2]/button"));
-
 //    public WebElement resultLbl = driver.findElement(By.cssSelector("div.result"));
 
-    public void openChangePasswordPage()
-    {
+    public void clickOnBtnChangePassword(){
+        WebElement changePasswordLink = driver.findElement(By.xpath("//li[@class='change-password inactive']"));
         clicking(changePasswordLink);
     }
+    public void ChangePassword(String oldPassword, String newPassword) {
 
-    public void ChangePassword(String oldpassword, String newpassword) {
-        inputText(oldPasswordTxt, oldpassword);
-        inputText(newPasswordTxt, newpassword);
-        inputText(confirmPasswordTxt, newpassword);
+        WebElement oldPasswordTxt = driver.findElement(By.id("OldPassword"));
+        WebElement newPasswordTxt = driver.findElement(By.id("NewPassword"));
+        WebElement confirmPasswordTxt = driver.findElement(By.id("ConfirmNewPassword"));
+        WebElement ChangePasswordBtn = driver.findElement(By.xpath("//button[@class='button-1 change-password-button']"));
+
+        inputText(oldPasswordTxt, oldPassword);
+        inputText(newPasswordTxt, newPassword);
+        inputText(confirmPasswordTxt, newPassword);
         clicking(ChangePasswordBtn);
     }
 

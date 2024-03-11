@@ -8,8 +8,8 @@ public class P06_ResultOfAutoSearch extends PageBase{
     public P06_ResultOfAutoSearch(WebDriver driver) {
         super(driver);
     }
-    WebElement EmailToFriendElement = driver.findElement(By.xpath("//div[@class='email-a-friend']"));
     public void EmailToFriend(){
+        WebElement EmailToFriendElement = driver.findElement(By.xpath("//div[@class='email-a-friend']"));
         clicking(EmailToFriendElement);
     }
 }

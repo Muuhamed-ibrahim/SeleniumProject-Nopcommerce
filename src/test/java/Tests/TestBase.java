@@ -39,7 +39,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(3200, TimeUnit.SECONDS);
         driver.navigate().to("https://demo.nopcommerce.com/");
 
-}
+    }
     //take screenshot when test case failed and add it in the screenshot folder
     @AfterMethod
     public void screenshotOnFailure(ITestResult result){

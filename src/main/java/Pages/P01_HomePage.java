@@ -9,34 +9,33 @@ public class P01_HomePage extends PageBase {
     public P01_HomePage(WebDriver driver) {
         super(driver);
     }
-    WebElement MyAccountBtn = driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));
-    WebElement RegisterBtnElement = driver.findElement(By.linkText("Register"));
-    WebElement LoginBtnElement = driver.findElement(By.linkText("Log in"));
-    WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
-    WebElement SearchBtn = driver.findElement(By.xpath("//button[@type='submit']"));
-    WebElement SearchAutoElement = driver.findElement(By.id("ui-id-1"));
-    WebElement ContactUsElement = driver.findElement(By.linkText("Contact us"));
-
 
     public void clickOnRegisterBtn (){
+        WebElement RegisterBtnElement = driver.findElement(By.linkText("Register"));
         clicking(RegisterBtnElement);
     }
     public void clickOnLoginBtn (){
+        WebElement LoginBtnElement = driver.findElement(By.linkText("Log in"));
         clicking(LoginBtnElement);
     }
     public void clickOnMyAccountBtn(){
+        WebElement MyAccountBtn = driver.findElement(By.linkText("My account"));
         clicking(MyAccountBtn);
     }
     public void SearchOnProduct (String productName){
+        WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
         inputText(SearchElement,productName);
+        WebElement SearchBtn = driver.findElement(By.xpath("//button[@type='submit']"));
         clicking(SearchBtn);
     }
     public void SearchAuto(String productName){
+        WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
         inputText(SearchElement,productName);
+        WebElement SearchAutoElement = driver.findElement(By.id("ui-id-1"));
         clicking(SearchAutoElement);
     }
-    public void ContactUsBtn (){
-        scrollToBottom();
-        clicking(ContactUsElement);
+    public void ShoppingCartBtn (){
+        WebElement ShoppingCartBtn = driver.findElement(By.xpath("//li[@id='topcartlink']"));
+        clicking(ShoppingCartBtn);
     }
 }

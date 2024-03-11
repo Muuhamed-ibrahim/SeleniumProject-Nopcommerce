@@ -9,9 +9,10 @@ public class P07_EmailToFriendPage extends PageBase{
         super(driver);
     }
     WebElement FriendEmail = driver.findElement(By.id("FriendEmail"));
+    WebElement yourEmail = driver.findElement((By.id("YourEmailAddress")));
     WebElement PersonalMessage = driver.findElement(By.id("PersonalMessage"));
     WebElement SendMailBtn = driver.findElement(By.xpath("//button[@name='send-email']"));
-    public void setFriendMail(String email, String message){
+    public void setFriendMail(String email,String message){
         inputText(FriendEmail,email);
         inputText(PersonalMessage,message);
         clicking(SendMailBtn);

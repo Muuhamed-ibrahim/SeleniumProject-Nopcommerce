@@ -9,19 +9,18 @@ public class P03_LoginPage extends PageBase{
     public P03_LoginPage(WebDriver driver) {
         super(driver);
     }
-    WebElement emailElement = driver.findElement(By.id("Email"));
-    WebElement passwordElement = driver.findElement(By.id("Password"));
-    WebElement loginBtn = driver.findElement(By.xpath("(//button[@type='submit'])[2]"));
-    public WebElement MyAccountBtn = driver.findElement(By.linkText("My account"));
+   
 
     public void enterLogin (String email, String password){
+
+        WebElement emailElement = driver.findElement(By.id("Email"));
+        WebElement passwordElement = driver.findElement(By.id("Password"));
+        WebElement loginBtn = driver.findElement(By.xpath("(//button[@type='submit'])[2]"));
+
+        emailElement.clear();
         inputText(emailElement, email);
         inputText(passwordElement, password);
         clicking(loginBtn);
 
-    }
-    public P04_MyAccountPage clickOnMyAccountBtn(){
-        clicking(MyAccountBtn);
-        return new P04_MyAccountPage(driver);
     }
 }

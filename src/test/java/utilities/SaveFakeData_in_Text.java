@@ -3,7 +3,7 @@ package utilities;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SaveFakeData {
+public class SaveFakeData_in_Text {
     public static void writeToFile(String fname, String lname, String email, String password, String filePath) {
         try (FileWriter writer = new FileWriter(filePath, true)) {
             // Append data to the file

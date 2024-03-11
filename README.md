@@ -61,4 +61,4 @@ This project is licensed under the [MIT License](LICENSE.md) - see the LICENSE.m
 
 ## Support
 
-For any questions or issues, feel free to contact [Mohamed Ibrahim](www.linkedin.com/in/mohamed-ibrahim-44352822b).
+For any questions or issues, feel free to contact [Mohamed Ibrahim]at[www.linkedin.com/in/mohamed-ibrahim-44352822b}.

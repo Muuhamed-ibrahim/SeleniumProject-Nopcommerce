@@ -8,13 +8,11 @@ Welcome to the Nop Commerce Web Testing Automation framework. This project lever
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
   - [Test Cases](#test-cases)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 - [Support](#support)
 
 ## Getting Started
@@ -29,13 +27,6 @@ Ensure that you have the following installed on your machine:
 - Java Faker for data generation
 - Apache POI for reading and writing Excel sheets
 
-### Installation
-
-Clone the repository to your local machine:
-
-```bash
-git clone https://github.com/your-username/Nop-Commerce-Automation.git
-cd Nop-Commerce-Automation
 ## Usage
 
 ### Test Cases

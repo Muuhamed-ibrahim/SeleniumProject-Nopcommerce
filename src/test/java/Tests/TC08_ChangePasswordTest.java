@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC03_MyAccountTest extends TestBase {
+public class TC08_ChangePasswordTest extends TestBase {
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P04_MyAccountPage p04MyAccountPage;

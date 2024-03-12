@@ -11,11 +11,11 @@ public class P01_HomePage extends PageBase {
     }
 
     public void clickOnRegisterBtn (){
-        WebElement RegisterBtnElement = driver.findElement(By.linkText("Register"));
+        WebElement RegisterBtnElement = driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-register']"));
         clicking(RegisterBtnElement);
     }
     public void clickOnLoginBtn (){
-        WebElement LoginBtnElement = driver.findElement(By.linkText("Log in"));
+        WebElement LoginBtnElement = driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-login']"));
         clicking(LoginBtnElement);
     }
     public void clickOnMyAccountBtn(){

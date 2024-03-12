@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC07_AddToShoppingCart extends TestBase{
+public class TC06_AddToShoppingCart extends TestBase{
     P01_HomePage p01HomePage; P03_LoginPage p03_loginPage; P05_ResultOfShow result;
     P08_ShoppingCart p08_shoppingCart;
     String nameOfProduct = "mac";

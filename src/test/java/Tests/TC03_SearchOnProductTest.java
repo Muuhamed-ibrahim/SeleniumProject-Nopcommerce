@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC04_SearchOnProductTest extends TestBase{
+public class TC03_SearchOnProductTest extends TestBase{
     P01_HomePage p01HomePage;
     P05_ResultOfShow result;
     P03_LoginPage p03LoginPage;
@@ -36,7 +36,6 @@ public class TC04_SearchOnProductTest extends TestBase{
     public void SelectProduct(){
         result = new P05_ResultOfShow(driver);
         result.SelectProduct();
-        p01HomePage.scrollToBottom();
         result.AddToCart();
         Assert.assertEquals((driver.findElement(By.xpath("//div[@class='bar-notification success']//p[@class='content']"))).getText(),"The product has been added to your shopping cart");
         result.CloseAssert();

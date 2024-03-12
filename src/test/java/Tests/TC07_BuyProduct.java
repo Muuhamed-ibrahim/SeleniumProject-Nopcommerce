@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC08_BuyProduct extends TestBase{
+public class TC07_BuyProduct extends TestBase{
     P01_HomePage p01HomePage; P03_LoginPage p03_loginPage; P08_ShoppingCart p08_shoppingCart;
     P09_CheckoutShippingAddress address; P10_ChechoutShippingMethod ShippingMethod;
     P11_CheckoutPaymentMethod paymentMethod; P12_CheckoutPaymentInfo paymentInfo;

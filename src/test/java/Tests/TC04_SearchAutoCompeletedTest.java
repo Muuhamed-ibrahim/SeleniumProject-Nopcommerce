@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC05_SearchAutoCompeletedTest extends TestBase{
+public class TC04_SearchAutoCompeletedTest extends TestBase{
     P01_HomePage p01HomePage;
     P03_LoginPage p03_loginPage;
     String nameOfProduct = "mac";

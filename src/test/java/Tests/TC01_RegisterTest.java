@@ -20,12 +20,10 @@ public class TC01_RegisterTest extends TestBase {
     String companyName = "iti";
 
     @Test
-    public void successfulRegister() {
+    public void successfulRegister()  {
         saveFakeDataToExcel.writeToFile(firstname, lastname, emailReg, passwordReg, filePath);
-
         p01HomePage = new P01_HomePage(driver);
         p01HomePage.clickOnRegisterBtn();
-
         p02RegisterPage = new P02_RegisterPage(driver);
         p02RegisterPage.RegisterCompleted(firstname, lastname, emailReg, companyName, passwordReg, passwordReg);
         Assert.assertEquals((driver.findElement(By.xpath("//div[@class='page-body']//div[@class='result']"))).getText(),"Your registration completed");

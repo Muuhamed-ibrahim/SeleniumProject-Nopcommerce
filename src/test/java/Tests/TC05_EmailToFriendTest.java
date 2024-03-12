@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC06_EmailToFriendTest extends TestBase {
+public class TC05_EmailToFriendTest extends TestBase {
     P01_HomePage p01HomePage;
     P03_LoginPage p03LoginPage;
     P07_EmailToFriendPage p07EmailToFriendPage;
@@ -37,7 +37,6 @@ public class TC06_EmailToFriendTest extends TestBase {
     @Test(priority = 3, dependsOnMethods = {"SearchOnProductAutoCompleted"})
     public void SendEmailToFriend(){
         p06ResultOfAutoSearch = new P06_ResultOfAutoSearch(driver);
-        p01HomePage.scrollToBottom();
         p06ResultOfAutoSearch.EmailToFriend();
         p07EmailToFriendPage = new P07_EmailToFriendPage(driver);
         p07EmailToFriendPage.setFriendMail("iti@test.com","iti");

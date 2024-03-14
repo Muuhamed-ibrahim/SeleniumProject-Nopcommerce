@@ -17,7 +17,7 @@ public class TestBase {
 
     @BeforeClass
     public void setup (){
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
         driver.navigate().to("https://demo.nopcommerce.com/");

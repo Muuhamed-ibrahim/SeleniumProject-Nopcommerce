@@ -24,7 +24,7 @@ public class TC01_RegisterTest extends TestBase {
 
     @Description(" Check Registration Functionality with right data")
     @Severity(SeverityLevel.CRITICAL)
-    @Test (priority = 1)
+    @Test
     public void successfulRegister()  {
         saveFakeDataToExcel.writeToFile(firstname, lastname, emailReg, passwordReg,newPassword,filePath);
         p01HomePage = new P01_HomePage(driver);

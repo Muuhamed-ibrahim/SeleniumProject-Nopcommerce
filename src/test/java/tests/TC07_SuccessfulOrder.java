@@ -17,7 +17,7 @@ public class TC07_SuccessfulOrder extends TestBase{
     String filePath = "F:\\4-intellij\\labs\\NopCommerce\\File\\RandomData_Excell.xlsx";
     String [] readLastData = ExcelReader.readLastRecordedData(filePath);
     String Email = readLastData [0]; String Password = readLastData [1];
-    String City = "Cairo"; String Address = "Egypt"; String Zip = "334422"; String phoneNumber = "123456789";
+    String City = "Cairo"; String Address = "Cairo"; String Zip = "334422"; String phoneNumber = "123456789";
     @Test(priority = 1)
     public void LoginSuccessfully(){
         p01HomePage = new P01_HomePage(driver);

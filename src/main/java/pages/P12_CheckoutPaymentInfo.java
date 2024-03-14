@@ -11,28 +11,23 @@ public class P12_CheckoutPaymentInfo extends PageBase{
     }
     public void CardholderName(String name) throws InterruptedException {
         WebElement CardholderNameElement = driver.findElement(By.id("CardholderName"));
-        Thread.sleep(500);
         inputText(CardholderNameElement,name);
     }
     public void CardNumber(String cardName) throws InterruptedException {
         WebElement CardNumberElement = driver.findElement(By.id("CardNumber"));
-        Thread.sleep(500);
         inputText(CardNumberElement,cardName);
     }
-    public void ExpirationDate() throws InterruptedException {
+    public void ExpirationDate() {
         WebElement ExpirationDateElement = driver.findElement(By.xpath("//select[@id='ExpireMonth']"));
         Select select = new Select(ExpirationDateElement);
-        Thread.sleep(500);
         select.selectByIndex(7);
     }
-    public void CardCode(String CardCode) throws InterruptedException {
+    public void CardCode(String CardCode) {
         WebElement CardCodeElement = driver.findElement(By.id("CardCode"));
-        Thread.sleep(500);
         inputText(CardCodeElement,CardCode);
     }
-    public void ContinueBtn() throws InterruptedException {
+    public void ContinueBtn() {
         WebElement continueElement = driver.findElement(By.xpath("//div[@class='buttons']//button[@class='button-1 payment-info-next-step-button']"));
-        Thread.sleep(500);
         clicking(continueElement);
     }
 }

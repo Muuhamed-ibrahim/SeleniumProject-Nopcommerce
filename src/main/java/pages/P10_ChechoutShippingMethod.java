@@ -11,7 +11,7 @@ public class P10_ChechoutShippingMethod extends PageBase {
     }
     public void ContinueBtn() throws InterruptedException {
         WebElement continueElement = driver.findElement(By.xpath("//div[@class='buttons']//button[@class='button-1 shipping-method-next-step-button']"));
-        Thread.sleep(500);
         clicking(continueElement);
+        Thread.sleep(500);
     }
 }

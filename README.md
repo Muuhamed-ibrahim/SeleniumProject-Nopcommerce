@@ -26,6 +26,7 @@ Ensure that you have the following installed on your machine:
 - TestNG
 - Java Faker for data generation
 - Apache POI for reading and writing Excel sheets
+- Allure Report
 
 ## Usage
 

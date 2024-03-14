@@ -28,7 +28,7 @@ public class PageBase {
     {
          element.sendKeys(text);
         try {
-            Thread.sleep(500); // Pause for 0.5 seconds
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

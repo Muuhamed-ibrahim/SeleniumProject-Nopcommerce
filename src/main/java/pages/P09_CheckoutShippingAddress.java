@@ -14,23 +14,23 @@ public class P09_CheckoutShippingAddress extends PageBase{
         Select select = new Select(CountryElement);
         select.selectByIndex(121);
     }
-    public void City(String city) throws InterruptedException {
+    public void City(String city)  {
         WebElement CityElement = driver.findElement(By.id("BillingNewAddress_City"));
         inputText(CityElement, city);
     }
-    public void Address(String address) throws InterruptedException {
+    public void Address(String address)  {
         WebElement AddressElement = driver.findElement(By.id("BillingNewAddress_Address1"));
         inputText(AddressElement, address);
     }
-    public void Zip(String zip) throws InterruptedException {
+    public void Zip(String zip)  {
         WebElement ZipElement = driver.findElement(By.id("BillingNewAddress_ZipPostalCode"));
         inputText(ZipElement, zip);
     }
-    public void PhoneNumber(String PhoneNumber) throws InterruptedException {
+    public void PhoneNumber(String PhoneNumber)  {
         WebElement PhoneNumberElement = driver.findElement(By.id("BillingNewAddress_PhoneNumber"));
         inputText(PhoneNumberElement, PhoneNumber);
     }
-    public void ContinueBtn() throws InterruptedException {
+    public void ContinueBtn() {
         WebElement ContinueBtnElement = driver.findElement(By.id("billing-buttons-container"));
         clicking(ContinueBtnElement);
     }

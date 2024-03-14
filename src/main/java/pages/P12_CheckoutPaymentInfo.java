@@ -9,11 +9,11 @@ public class P12_CheckoutPaymentInfo extends PageBase{
     public P12_CheckoutPaymentInfo(WebDriver driver) {
         super(driver);
     }
-    public void CardholderName(String name) throws InterruptedException {
+    public void CardholderName(String name)  {
         WebElement CardholderNameElement = driver.findElement(By.id("CardholderName"));
         inputText(CardholderNameElement,name);
     }
-    public void CardNumber(String cardName) throws InterruptedException {
+    public void CardNumber(String cardName)  {
         WebElement CardNumberElement = driver.findElement(By.id("CardNumber"));
         inputText(CardNumberElement,cardName);
     }

@@ -1,8 +1,8 @@
-package Tests;
+package tests;
 
-import Pages.P01_HomePage;
-import Pages.P03_LoginPage;
-import Pages.P05_ResultOfShow;
+import pages.P01_HomePage;
+import pages.P03_LoginPage;
+import pages.P05_ResultOfShow;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -27,17 +27,16 @@ public class TC03_SearchOnProductTest extends TestBase{
 
     }
     @Test(priority = 2, dependsOnMethods = {"LoginSuccessful"})
-    public void SearchOnProduct(){
+    public void SearchOnProduct() throws InterruptedException {
         p01HomePage = new P01_HomePage(driver);
         String nameOfProduct = "mac";
+            Thread.sleep(1000);
         p01HomePage.SearchOnProduct(nameOfProduct);
     }
     @Test(priority = 3, dependsOnMethods = {"SearchOnProduct"})
-    public void SelectProduct(){
+    public void SelectProduct() throws InterruptedException {
         result = new P05_ResultOfShow(driver);
+        Thread.sleep(1000);
         result.SelectProduct();
-        result.AddToCart();
-        Assert.assertEquals((driver.findElement(By.xpath("//div[@class='bar-notification success']//p[@class='content']"))).getText(),"The product has been added to your shopping cart");
-        result.CloseAssert();
     }
 }

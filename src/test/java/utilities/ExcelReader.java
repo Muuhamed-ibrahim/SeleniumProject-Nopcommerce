@@ -21,8 +21,9 @@ public class ExcelReader {
             // read email and password
             String email = lastRow.getCell(2).getStringCellValue();
             String password = lastRow.getCell(3).getStringCellValue();
+            String newPassword = lastRow.getCell(4).getStringCellValue();
 
-            return new String[]{email, password};
+            return new String[]{email, password, newPassword};
 
         } catch (IOException e) {
             e.printStackTrace();

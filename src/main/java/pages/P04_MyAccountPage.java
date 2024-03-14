@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,6 @@ public class P04_MyAccountPage extends PageBase{
         super(driver);
     }
 
-//    public WebElement resultLbl = driver.findElement(By.cssSelector("div.result"));
 
     public void clickOnBtnChangePassword(){
         WebElement changePasswordLink = driver.findElement(By.xpath("//li[@class='change-password inactive']"));

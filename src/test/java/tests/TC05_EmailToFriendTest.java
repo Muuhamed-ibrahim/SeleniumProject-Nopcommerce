@@ -1,6 +1,6 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -35,7 +35,7 @@ public class TC05_EmailToFriendTest extends TestBase {
         }
     }
     @Test(priority = 3, dependsOnMethods = {"SearchOnProductAutoCompleted"})
-    public void SendEmailToFriend(){
+    public void SendEmailToFriend() throws InterruptedException {
         p06ResultOfAutoSearch = new P06_ResultOfAutoSearch(driver);
         p06ResultOfAutoSearch.EmailToFriend();
         p07EmailToFriendPage = new P07_EmailToFriendPage(driver);

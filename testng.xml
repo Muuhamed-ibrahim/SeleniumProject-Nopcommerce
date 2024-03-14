@@ -2,7 +2,7 @@
 <suite name="MySuite">
     <test name="AllTests">
         <packages>
-            <package name="Tests" />
+            <package name="tests" />
         </packages>
     </test>
 </suite>

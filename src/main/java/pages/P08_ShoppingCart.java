@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,12 +9,12 @@ public class P08_ShoppingCart extends PageBase{
         super(driver);
     }
 
-    public void  CheckoutBtn(){
+    public void  CheckoutBtn() throws InterruptedException {
         WebElement AgreeElement = driver.findElement(By.id("termsofservice"));
         WebElement CheckoutElement = driver.findElement(By.id("checkout"));
-
-        scrollToBottom();
+        scrollToElement(AgreeElement);
         clicking(AgreeElement);
+        scrollToElement(CheckoutElement);
         clicking(CheckoutElement);
     }
 }

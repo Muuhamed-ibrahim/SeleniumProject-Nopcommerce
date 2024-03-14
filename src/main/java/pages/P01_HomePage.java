@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,14 +28,29 @@ public class P01_HomePage extends PageBase {
         WebElement SearchBtn = driver.findElement(By.xpath("//button[@type='submit']"));
         clicking(SearchBtn);
     }
-    public void SearchAuto(String productName){
+    public void SearchAuto(String productName) throws InterruptedException {
         WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
         inputText(SearchElement,productName);
+        Thread.sleep(1000);
         WebElement SearchAutoElement = driver.findElement(By.id("ui-id-1"));
+        Thread.sleep(1000);
         clicking(SearchAutoElement);
     }
     public void ShoppingCartBtn (){
         WebElement ShoppingCartBtn = driver.findElement(By.xpath("//li[@id='topcartlink']"));
         clicking(ShoppingCartBtn);
+    }
+    public void Logout(){
+        WebElement CloseAlert= driver.findElement(By.xpath("//div[@id='bar-notification']//span[@class='close']"));
+        clicking(CloseAlert);
+        WebElement LogoutElement = driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-logout']"));
+        clicking(LogoutElement);
+
+    }
+    public void followUs() throws InterruptedException {
+        WebElement facebookElement = driver.findElement(By.linkText("Facebook"));
+        scrollToElement(facebookElement);
+        Thread.sleep(1000);
+        clicking(facebookElement);
     }
 }

@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,12 +9,14 @@ public class P05_ResultOfShow extends PageBase{
     public P05_ResultOfShow(WebDriver driver) {
         super(driver);
     }
-    public void SelectProduct(){
+    public void SelectProduct() throws InterruptedException {
         WebElement selectProductElement = driver.findElement(By.xpath("//div[@class='details']//a[@href='/apple-macbook-pro-13-inch']"));
+        scrollToElement(selectProductElement);
         clicking(selectProductElement);
     }
-    public void AddToCart(){
+    public void AddToCart() throws InterruptedException {
         WebElement AddToCart = driver.findElement(By.id("add-to-cart-button-4"));
+        scrollToElement(AddToCart);
         clicking(AddToCart);
     }
     public void CloseAssert(){

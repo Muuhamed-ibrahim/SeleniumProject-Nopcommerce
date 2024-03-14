@@ -1,7 +1,7 @@
-package Tests;
+package tests;
 
-import Pages.P01_HomePage;
-import Pages.P03_LoginPage;
+import pages.P01_HomePage;
+import pages.P03_LoginPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,12 +1,15 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
-public class TC07_BuyProduct extends TestBase{
+public class TC07_SuccessfulOrder extends TestBase{
     P01_HomePage p01HomePage; P03_LoginPage p03_loginPage; P08_ShoppingCart p08_shoppingCart;
     P09_CheckoutShippingAddress address; P10_ChechoutShippingMethod ShippingMethod;
     P11_CheckoutPaymentMethod paymentMethod; P12_CheckoutPaymentInfo paymentInfo;
@@ -25,36 +28,58 @@ public class TC07_BuyProduct extends TestBase{
 
     }
     @Test(priority = 2, dependsOnMethods ={"LoginSuccessfully"})
-    public void BuyProduct() {
+    public void BuyProduct() throws InterruptedException {
         p01HomePage.ShoppingCartBtn();
+        Thread.sleep(1000);
         p08_shoppingCart = new P08_ShoppingCart(driver);
         p08_shoppingCart.CheckoutBtn();
+        Thread.sleep(1000);
     }
+    @Description(" Check PaymentMethod Functionality with right data")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 3, dependsOnMethods = {"BuyProduct"})
-    public void CompleteTypes () {
+    public void CompleteTypes () throws InterruptedException {
     address = new P09_CheckoutShippingAddress(driver);
     address.Country();
+        Thread.sleep(1000);
     address.City(City);
+        Thread.sleep(1000);
     address.Address(Address);
+        Thread.sleep(1000);
     address.Zip(Zip);
+        Thread.sleep(1000);
     address.PhoneNumber(phoneNumber);
+        Thread.sleep(1000);
     address.ContinueBtn();
+        Thread.sleep(1000);
     ShippingMethod = new P10_ChechoutShippingMethod(driver);
     ShippingMethod.ContinueBtn();
+        Thread.sleep(1000);
     paymentMethod = new P11_CheckoutPaymentMethod(driver);
     paymentMethod.CreditCardBtn();
+        Thread.sleep(1000);
     paymentMethod.ContinueBtn();
+        Thread.sleep(1000);
     }
+    @Description(" Check PaymentInformation Functionality with right data")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 4, dependsOnMethods = {"CompleteTypes"})
-    public void CompletePaymentInfo () {
+    public void CompletePaymentInfo () throws InterruptedException {
         paymentInfo = new P12_CheckoutPaymentInfo(driver);
         paymentInfo.CardholderName("Amex");
+        Thread.sleep(1000);
         paymentInfo.CardNumber("374245455400126");
+        Thread.sleep(1000);
         paymentInfo.ExpirationDate();
+        Thread.sleep(1000);
         paymentInfo.CardCode("123");
+        Thread.sleep(1000);
         paymentInfo.ContinueBtn();
+        Thread.sleep(1000);
         confirmOrderPage = new P13_ConfirmOrderPage(driver);
         confirmOrderPage.ContinueBtn();
+        Thread.sleep(1000);
+
     }
 
 

@@ -1,13 +1,13 @@
-package Pages;
+package pages;
 
-import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class PageBase {
     protected WebDriver driver;
-    protected JavascriptExecutor jse ;
+    protected static JavascriptExecutor jse ;
 
 
     public PageBase(WebDriver driver){
@@ -18,7 +18,7 @@ public class PageBase {
     public static void clicking(WebElement object){
         object.click();
         try {
-            Thread.sleep(500); // Pause for 1 seconds
+            Thread.sleep(500); // Pause for 0.5 seconds
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -28,17 +28,18 @@ public class PageBase {
     {
          element.sendKeys(text);
         try {
-            Thread.sleep(1000); // Pause for 1 seconds
+            Thread.sleep(500); // Pause for 0.5 seconds
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    public void scrollToBottom(){
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        try {
-            Thread.sleep(2000); // Pause for 3 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public static void selecting(WebElement element, int x){
+        Select select = new Select(element);
+        select.selectByIndex(x);
+    }
+    public static void scrollToElement(WebElement element) throws InterruptedException {
+        Thread.sleep(1500);
+        jse.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});", element);
+        Thread.sleep(3000);
     }
 }

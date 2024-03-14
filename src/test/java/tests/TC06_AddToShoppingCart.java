@@ -1,9 +1,9 @@
-package Tests;
+package tests;
 
-import Pages.P03_LoginPage;
-import Pages.P01_HomePage;
-import Pages.P05_ResultOfShow;
-import Pages.P08_ShoppingCart;
+import pages.P03_LoginPage;
+import pages.P01_HomePage;
+import pages.P05_ResultOfShow;
+import pages.P08_ShoppingCart;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,6 +30,7 @@ public class TC06_AddToShoppingCart extends TestBase{
         try {
             p01HomePage = new P01_HomePage(driver);
             p01HomePage.SearchAuto(nameOfProduct);
+            Thread.sleep(1000);
         }
         catch (Exception e){
             System.out.println("error" + e.getMessage());
@@ -37,10 +38,10 @@ public class TC06_AddToShoppingCart extends TestBase{
 
     }
     @Test(priority = 3, dependsOnMethods = {"SearchOnProduct"})
-    public void SelectProduct(){
+    public void SelectProduct() throws InterruptedException {
         result = new P05_ResultOfShow(driver);
-        p01HomePage.scrollToBottom();
         result.AddToCart();
+        Thread.sleep(1000);
         Assert.assertEquals((driver.findElement(By.xpath("//div[@class='bar-notification success']//p[@class='content']"))).getText(),"The product has been added to your shopping cart");
         result.CloseAssert();
     }

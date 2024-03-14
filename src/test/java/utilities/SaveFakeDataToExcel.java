@@ -7,13 +7,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class SaveFakeDataToExcel {
-    public static void writeToFile(String fname, String lname, String email, String password, String filePath) {
+    public static void writeToFile(String fname, String lname, String email, String password, String newPassword,String filePath) {
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("RandomData");
             Row headerRow = sheet.createRow(0);
 
             // Create headers
-            String[] headers = {"First Name", "Last Name", "Email", "Password"};
+            String[] headers = {"First Name", "Last Name", "Email", "Password","newPassword"};
             for (int i = 0; i < headers.length; i++) {
                 Cell cell = headerRow.createCell(i);
                 cell.setCellValue(headers[i]);
@@ -25,6 +25,7 @@ public class SaveFakeDataToExcel {
             dataRow.createCell(1).setCellValue(lname);
             dataRow.createCell(2).setCellValue(email);
             dataRow.createCell(3).setCellValue(password);
+            dataRow.createCell(4).setCellValue(newPassword);
 
             // Write the workbook to the file
             try (FileOutputStream fileOut = new FileOutputStream(filePath)) {

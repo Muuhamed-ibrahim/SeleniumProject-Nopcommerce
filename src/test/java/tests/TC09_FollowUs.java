@@ -4,11 +4,9 @@ import pages.P01_HomePage;
 import org.testng.annotations.Test;
 
 import java.util.Set;
-@Test
+@Test (priority = 1)
 public class TC09_FollowUs extends TestBase{
     P01_HomePage homePage;
-    String username = "Handle Two Window";
-    String password = "iti**123456";
     public void NavigateToFacebook() throws InterruptedException {
         homePage = new P01_HomePage(driver);
         String Main = driver.getWindowHandle();

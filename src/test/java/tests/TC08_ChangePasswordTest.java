@@ -39,11 +39,11 @@ public class TC08_ChangePasswordTest extends TestBase {
         p04MyAccountPage.ChangePassword(password,newPassword);
         Assert.assertEquals(driver.findElement(By.xpath("//div[@id='bar-notification']//p[@class='content']")).getText(),"Password was changed");
     }
-    @Test(priority = 3, dependsOnMethods = {"ChangePassword"})
+    @Test(priority = 4, dependsOnMethods = {"ChangePassword"})
     public void Logout(){
         p01HomePage.Logout();
     }
-    @Test(priority = 4, dependsOnMethods = {"clickOnBtnChangePassword"})
+    @Test(priority = 5, dependsOnMethods = {"clickOnBtnChangePassword"})
     public void LoginWithNewPassword() {
         p01HomePage = new P01_HomePage(driver);
         p01HomePage.clickOnLoginBtn();

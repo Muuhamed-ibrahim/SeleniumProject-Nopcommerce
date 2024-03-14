@@ -39,7 +39,8 @@ Ensure that you have the following installed on your machine:
 5. **Search on Product using Auto Completed**
 6. **Email to Friend**
 7. **Add to Shopping Cart**
-8. **Buy Product**
+8. **Successful Order**
+9. **Navigate To Facebook**
 
 ## Configuration
 

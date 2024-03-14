@@ -26,7 +26,7 @@ public class TC04_SearchAutoCompeletedTest extends TestBase{
 
     }
     @Test(priority = 2, dependsOnMethods = {"LoginSuccessfully"})
-    public void SearchOnProductAtuo(){
+    public void SearchOnProductAuto(){
         try {
             p01HomePage = new P01_HomePage(driver);
             p01HomePage.SearchAuto(nameOfProduct);

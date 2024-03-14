@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 @Test (priority = 1)
-public class TC09_FollowUs extends TestBase{
+class TC09_FollowUs extends TestBase{
     P01_HomePage homePage;
     public void NavigateToFacebook() throws InterruptedException {
         homePage = new P01_HomePage(driver);

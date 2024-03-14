@@ -15,8 +15,8 @@ public class TC01_RegisterTest extends TestBase {
     P02_RegisterPage p02RegisterPage;
     SaveFakeDataToExcel saveFakeDataToExcel;
     String filePath = "F:\\4-intellij\\labs\\NopCommerce\\File\\RandomData_Excell.xlsx";
-    static String emailReg = faker.internet().emailAddress();
-    static String passwordReg = faker.internet().password();
+    String emailReg = faker.internet().emailAddress();
+    String passwordReg = faker.internet().password();
     String newPassword = faker.internet().password();
     String firstname = faker.name().firstName();
     String lastname = faker.name().lastName();

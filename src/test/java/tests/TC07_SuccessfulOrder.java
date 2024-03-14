@@ -41,25 +41,16 @@ public class TC07_SuccessfulOrder extends TestBase{
     public void CompleteTypes () throws InterruptedException {
     address = new P09_CheckoutShippingAddress(driver);
     address.Country();
-        Thread.sleep(1000);
     address.City(City);
-        Thread.sleep(1000);
     address.Address(Address);
-        Thread.sleep(1000);
     address.Zip(Zip);
-        Thread.sleep(1000);
     address.PhoneNumber(phoneNumber);
-        Thread.sleep(1000);
     address.ContinueBtn();
-        Thread.sleep(1000);
     ShippingMethod = new P10_ChechoutShippingMethod(driver);
     ShippingMethod.ContinueBtn();
-        Thread.sleep(1000);
     paymentMethod = new P11_CheckoutPaymentMethod(driver);
     paymentMethod.CreditCardBtn();
-        Thread.sleep(1000);
     paymentMethod.ContinueBtn();
-        Thread.sleep(1000);
     }
     @Description(" Check PaymentInformation Functionality with right data")
     @Severity(SeverityLevel.CRITICAL)

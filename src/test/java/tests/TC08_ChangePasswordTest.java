@@ -40,7 +40,7 @@ public class TC08_ChangePasswordTest extends TestBase {
         Assert.assertEquals(driver.findElement(By.xpath("//div[@id='bar-notification']//p[@class='content']")).getText(),"Password was changed");
     }
     @Test(priority = 4, dependsOnMethods = {"ChangePassword"})
-    public void Logout(){
+    public void Logout() throws InterruptedException {
         p01HomePage.Logout();
     }
     @Test(priority = 5, dependsOnMethods = {"clickOnBtnChangePassword"})

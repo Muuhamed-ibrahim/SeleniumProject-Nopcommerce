@@ -10,8 +10,6 @@ public class P06_ResultOfAutoSearch extends PageBase{
     }
     public void EmailToFriend() throws InterruptedException {
         WebElement EmailToFriendElement = driver.findElement(By.xpath("//div[@class='email-a-friend']"));
-        Thread.sleep(1000);
         clicking(EmailToFriendElement);
-        Thread.sleep(1000);
     }
 }

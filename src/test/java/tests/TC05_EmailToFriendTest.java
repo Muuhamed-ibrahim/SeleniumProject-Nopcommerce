@@ -27,13 +27,10 @@ public class TC05_EmailToFriendTest extends TestBase {
 
     }
     @Test(priority = 2, dependsOnMethods = {"LoginSuccessfully"})
-    public void SearchOnProductAutoCompleted() {
-        try {
+    public void SearchOnProductAutoCompleted() throws InterruptedException {
+
             p01HomePage = new P01_HomePage(driver);
             p01HomePage.SearchAuto("mac");
-        } catch (Exception e) {
-            System.out.println("error" + e.getMessage());
-        }
     }
     @Test(priority = 3, dependsOnMethods = {"SearchOnProductAutoCompleted"})
     public void SendEmailToFriend() throws InterruptedException {

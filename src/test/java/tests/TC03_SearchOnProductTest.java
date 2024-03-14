@@ -30,13 +30,11 @@ public class TC03_SearchOnProductTest extends TestBase{
     public void SearchOnProduct() throws InterruptedException {
         p01HomePage = new P01_HomePage(driver);
         String nameOfProduct = "mac";
-            Thread.sleep(1000);
         p01HomePage.SearchOnProduct(nameOfProduct);
     }
     @Test(priority = 3, dependsOnMethods = {"SearchOnProduct"})
     public void SelectProduct() throws InterruptedException {
         result = new P05_ResultOfShow(driver);
-        Thread.sleep(1000);
         result.SelectProduct();
     }
 }

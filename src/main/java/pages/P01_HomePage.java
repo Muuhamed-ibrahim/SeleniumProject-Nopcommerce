@@ -22,11 +22,13 @@ public class P01_HomePage extends PageBase {
         WebElement MyAccountBtn = driver.findElement(By.linkText("My account"));
         clicking(MyAccountBtn);
     }
-    public void SearchOnProduct (String productName){
+    public void SearchOnProduct (String productName) throws InterruptedException {
         WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
         inputText(SearchElement,productName);
+        Thread.sleep(500);
         WebElement SearchBtn = driver.findElement(By.xpath("//button[@type='submit']"));
         clicking(SearchBtn);
+        Thread.sleep(500);
     }
     public void SearchAuto(String productName) throws InterruptedException {
         WebElement SearchElement = driver.findElement(By.id("small-searchterms"));
@@ -40,11 +42,13 @@ public class P01_HomePage extends PageBase {
         WebElement ShoppingCartBtn = driver.findElement(By.xpath("//li[@id='topcartlink']"));
         clicking(ShoppingCartBtn);
     }
-    public void Logout(){
+    public void Logout() throws InterruptedException {
         WebElement CloseAlert= driver.findElement(By.xpath("//div[@id='bar-notification']//span[@class='close']"));
         clicking(CloseAlert);
+        Thread.sleep(500);
         WebElement LogoutElement = driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-logout']"));
         clicking(LogoutElement);
+        Thread.sleep(500);
 
     }
     public void followUs() throws InterruptedException {

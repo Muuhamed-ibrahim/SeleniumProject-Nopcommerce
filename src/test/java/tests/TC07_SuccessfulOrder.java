@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
+import java.io.IOException;
+
 public class TC07_SuccessfulOrder extends TestBase{
     P01_HomePage p01HomePage; P03_LoginPage p03_loginPage; P08_ShoppingCart p08_shoppingCart;
     P09_CheckoutShippingAddress address; P10_ChechoutShippingMethod ShippingMethod;
@@ -18,7 +20,11 @@ public class TC07_SuccessfulOrder extends TestBase{
     String [] readLastData = ExcelReader.readLastRecordedData(filePath);
     String Email = readLastData [0]; String Password = readLastData [1];
     String City = "Cairo"; String Address = "Cairo"; String Zip = "334422"; String phoneNumber = "123456789";
-    @Test(priority = 1)
+
+    public TC07_SuccessfulOrder() throws IOException {
+    }
+
+    @Test(priority = 2,dependsOnMethods = "successfulRegister", alwaysRun = true)
     public void LoginSuccessfully(){
         p01HomePage = new P01_HomePage(driver);
         p01HomePage.clickOnLoginBtn();
@@ -27,7 +33,7 @@ public class TC07_SuccessfulOrder extends TestBase{
         Assert.assertEquals(driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-logout']")).getText(),"Log out");
 
     }
-    @Test(priority = 2, dependsOnMethods ={"LoginSuccessfully"})
+    @Test(priority = 3, dependsOnMethods ={"LoginSuccessfully"})
     public void BuyProduct() throws InterruptedException {
         p01HomePage.ShoppingCartBtn();
         Thread.sleep(1000);
@@ -37,7 +43,7 @@ public class TC07_SuccessfulOrder extends TestBase{
     }
     @Description(" Check PaymentMethod Functionality with right data")
     @Severity(SeverityLevel.CRITICAL)
-    @Test(priority = 3, dependsOnMethods = {"BuyProduct"})
+    @Test(priority = 4, dependsOnMethods = {"BuyProduct"})
     public void CompleteTypes () throws InterruptedException {
     address = new P09_CheckoutShippingAddress(driver);
     address.Country();
@@ -54,7 +60,7 @@ public class TC07_SuccessfulOrder extends TestBase{
     }
     @Description(" Check PaymentInformation Functionality with right data")
     @Severity(SeverityLevel.CRITICAL)
-    @Test(priority = 4, dependsOnMethods = {"CompleteTypes"})
+    @Test(priority = 5, dependsOnMethods = {"CompleteTypes"})
     public void CompletePaymentInfo () throws InterruptedException {
         paymentInfo = new P12_CheckoutPaymentInfo(driver);
         paymentInfo.CardholderName("Amex");

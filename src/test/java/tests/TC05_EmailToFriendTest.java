@@ -6,6 +6,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
+import java.io.IOException;
+
 
 public class TC05_EmailToFriendTest extends TestBase {
     P01_HomePage p01HomePage;
@@ -17,7 +19,10 @@ public class TC05_EmailToFriendTest extends TestBase {
     String Email = readLastData[0];
     String Password = readLastData[1];
 
-    @Test(priority = 1)
+    public TC05_EmailToFriendTest() throws IOException {
+    }
+
+    @Test(priority = 2,dependsOnMethods = "successfulRegister", alwaysRun = true)
     public void LoginSuccessfully() {
         p01HomePage = new P01_HomePage(driver);
         p01HomePage.clickOnLoginBtn();
@@ -26,14 +31,14 @@ public class TC05_EmailToFriendTest extends TestBase {
         Assert.assertEquals(driver.findElement(By.xpath("//div[@class='header-links-wrapper']//a[@class='ico-logout']")).getText(),"Log out");
 
     }
-    @Test(priority = 2, dependsOnMethods = {"LoginSuccessfully"})
+    @Test(priority = 3, dependsOnMethods = {"LoginSuccessfully"})
     public void SearchOnProductAutoCompleted() throws InterruptedException {
 
             p01HomePage = new P01_HomePage(driver);
             p01HomePage.SearchAuto("mac");
     }
-    @Test(priority = 3, dependsOnMethods = {"SearchOnProductAutoCompleted"})
-    public void SendEmailToFriend() throws InterruptedException {
+    @Test(priority = 4, dependsOnMethods = {"SearchOnProductAutoCompleted"})
+    public void SendEmailToFriend()  {
         p06ResultOfAutoSearch = new P06_ResultOfAutoSearch(driver);
         p06ResultOfAutoSearch.EmailToFriend();
         p07EmailToFriendPage = new P07_EmailToFriendPage(driver);

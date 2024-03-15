@@ -10,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.ExcelReader;
 
+import java.io.IOException;
+
 
 public class TC02_LoginPageTest extends TestBase{
     P01_HomePage p01HomePage;
@@ -19,9 +21,12 @@ public class TC02_LoginPageTest extends TestBase{
     String  email = lastRecordedData[0];
     String password = lastRecordedData[1];
 
+    public TC02_LoginPageTest() throws IOException {
+    }
+
     @Description("Check Login Functionality with valid username and password")
     @Severity(SeverityLevel.CRITICAL)
-    @Test
+    @Test(priority = 2,dependsOnMethods = "successfulRegister", alwaysRun = true)
     public void SuccessfulLogin() {
 
             p01HomePage = new P01_HomePage(driver);

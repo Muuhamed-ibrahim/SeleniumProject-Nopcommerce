@@ -10,10 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.SaveFakeDataToExcel;
 
+import java.io.IOException;
+
 public class TC01_RegisterTest extends TestBase {
     P01_HomePage p01HomePage;
     P02_RegisterPage p02RegisterPage;
-    SaveFakeDataToExcel saveFakeDataToExcel;
     String filePath = "F:\\4-intellij\\labs\\NopCommerce\\File\\RandomData_Excell.xlsx";
     String emailReg = faker.internet().emailAddress();
     String passwordReg = faker.internet().password();
@@ -24,9 +25,9 @@ public class TC01_RegisterTest extends TestBase {
 
     @Description(" Check Registration Functionality with right data")
     @Severity(SeverityLevel.CRITICAL)
-    @Test
-    public void successfulRegister()  {
-        saveFakeDataToExcel.writeToFile(firstname, lastname, emailReg, passwordReg,newPassword,filePath);
+    @Test (priority = 1,alwaysRun = true)
+    public void successfulRegister() throws IOException {
+        SaveFakeDataToExcel.writeToFile(firstname, lastname, emailReg, passwordReg,newPassword,filePath);
         p01HomePage = new P01_HomePage(driver);
         p01HomePage.clickOnRegisterBtn();
         p02RegisterPage = new P02_RegisterPage(driver);

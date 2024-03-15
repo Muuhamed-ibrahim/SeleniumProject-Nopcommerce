@@ -15,7 +15,7 @@ class TC09_FollowUs extends TestBase{
         for (String string : AllWindow){
             if (!string.equals(Main)){
                 driver.switchTo().window(string);
-                    Thread.sleep(10000);
+                    Thread.sleep(5000);
                 driver.close();
             }
         }
